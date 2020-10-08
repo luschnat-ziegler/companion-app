@@ -1,3 +1,13 @@
+@import "./variables.css";
+@import "./buddies.css";
+@import "./chart.css";
+@import "./energylebel.css";
+@import "./journal.css";
+@import "./journalcard.css";
+@import "./navbar.css";
+@import "./team.css";
+
+
 * {
     box-sizing: border-box;
 }
