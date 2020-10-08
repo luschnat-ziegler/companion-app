@@ -1,0 +1,68 @@
+:root {
+    --primary: #193251;
+    --primary-medium: #7589a2;
+    --primary-light: #E0E4E8;
+    --primary-lighter: #f8f8f8;
+
+    --secondary: #ff5a36;
+    --secondary-medium: #ff9c86;
+    --secondary-light: #ffbdaf;
+    --secondary-lighter: #ffded7;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.page-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: var(--primary);
+}
+.section-title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    color: var(--primary);
+}
+.page-subtitle {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: var(--primary-medium);
+}
+.name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-medium);
+}
+.card-label {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--primary-medium);
+}
+.motto {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    color: var(--primary);
+}
+.card-paragraph {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--primary);
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+/*# sourceMappingURL=/styles.b61e60ae.css.map */

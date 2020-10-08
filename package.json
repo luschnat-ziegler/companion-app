@@ -1,0 +1,23 @@
+{
+  "name": "companion-app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luschnat-ziegler/companion-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luschnat-ziegler/companion-app/issues"
+  },
+  "homepage": "https://github.com/luschnat-ziegler/companion-app#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
