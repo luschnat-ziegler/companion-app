@@ -1,13 +1,11 @@
 @import "./variables.css";
-@import "./buddies.css";
-@import "./chart.css";
-@import "./energylebel.css";
-@import "./journal.css";
-@import "./journalcard.css";
-@import "./navbar.css";
-@import "./team.css";
+@import "./components/buddies.css";
+@import "./components/chart.css";
+@import "./components/energylevel.css";
+@import "./components/journal.css";
+@import "./components/journalcard.css";
+@import "./components/navbar.css";
+@import "./components/team.css";
+@import "./base.css";
 
-
-* {
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
