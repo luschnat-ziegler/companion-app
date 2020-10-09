@@ -5,7 +5,7 @@
 @import "./components/journal.css";
 @import "./components/journalcard.css";
 @import "./components/navbar.css";
-@import "./components/team.css";
+@import "./components/teams.css";
 @import "./base.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
