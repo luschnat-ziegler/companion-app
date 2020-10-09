@@ -1,6 +1,12 @@
 .main-journal {
   width: 100%;
 }
+.mobile {
+  width: 375px;
+}
+.uppercase {
+  text-transform: uppercase;
+}
 
 .header-journal {
   text-align: center;
@@ -10,14 +16,16 @@
 .btn-journal {
   width: 200px;
   height: 48px;
-
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: inline-block;
+  margin: 18px auto;
+  /* display: inline-block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   font-size: 16px;
-  text-align: center;
-  vertical-align: middle;
+  font-weight: 400;
+  line-height: 24px;
+
   padding: 12px 24px;
   border: 0px;
   border-radius: 5px;
@@ -29,23 +37,37 @@
   -moz-box-shadow: 0px 2px 11px 0px rgba(255, 90, 54, 0.4);
   box-shadow: 0px 2px 11px 0px rgba(255, 90, 54, 0.4);
 }
+.btn-journal > img {
+  margin-top: -4px;
+  margin-left: 7px;
+}
 
 .btn-save {
-  width: 152px;
-  height: 48px;
+  display: inline;
+  max-width: 152px;
+  max-height: 48px;
   font-size: 16px;
+  margin-left: 4px;
 }
 
 .btn-cancel {
-  width: 118px;
-  height: 48px;
+  display: inline;
+  max-width: 152px;
+  max-height: 48px;
   background: white;
   color: var(--primary);
   font-size: 16px;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
-.journal-section {
-  width: 100%;
+.section-journal {
+  margin: 0 auto;
+}
+.dashboard-card-title {
+  margin: 0 0 0 32px;
 }
 
 .card {
@@ -69,15 +91,25 @@
   display: flex;
   flex-direction: row;
   /* justify-content: flex-start; */
+  height: 30px;
+}
+
+.rating-display > img {
+  margin-right: 20px;
+  height: 24px;
+}
+.rating-display-create > img {
+  margin-right: 17px;
+  height: 34px;
+}
+
+.comprehension-display > img {
+  margin-right: 6px;
   height: 22px;
 }
-
-.rating-display>img {
-  margin-right: 17px;
-}
-
-.comprehension-display>img {
+.comprehension-display-create > img {
   margin-right: 6px;
+  height: 26px;
 }
 
 .mb-1 {
@@ -87,8 +119,13 @@
 .mt-1 {
   margin-top: 18px;
 }
+.formfields {
+  height: auto;
+  margin: 50px auto;
 
-.form-fields>input {
+  width: 315px;
+}
+.form-fields > input {
   width: 100%;
   height: 62px;
   padding: 20px;
@@ -100,7 +137,7 @@
   font-weight: 400;
 }
 
-.form-fields>textarea {
+.form-fields > textarea {
   width: 100%;
   height: 124px;
   padding: 20px;
@@ -124,4 +161,11 @@ textarea:focus {
   background-color: #ffded7;
   outline: none;
   border: 1px solid #ff9c86;
+}
+
+.svg-inline-border {
+  outline-color: rgb(0, 0, 255);
+  outline-style: solid;
+  outline-width: 10px;
+  outline-offset: -10px;
 }
