@@ -1,0 +1,18 @@
+.navbar {
+	display: flex;
+	justify-content: space-around;
+	position: fixed;
+	padding-top: 12px;
+	bottom: 20px;
+	height: 44px;
+	left: 20px;
+	right: 20px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 2px 11px 0px rgba(25, 50, 81, 0.2);
+	-moz-box-shadow: 0px 2px 11px 0px rgba(25, 50, 81, 0.2);
+	box-shadow: 0px 2px 11px 0px rgba(25, 50, 81, 0.2);
+}
+
+.navbar__icon {
+	height: 20px;
+}
