@@ -1,4 +1,4 @@
-.header__energy {
+.header__index {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,8 +6,11 @@
   width: 376px;
   height: 59px;
 }
-.svg__energy {
+.svg__index {
   background-image: url(/src/img/background_shape_1.svg);
   background-size: cover;
   margin-bottom: 30px;
+}
+.h2__index {
+  margin-left: 30px;
 }

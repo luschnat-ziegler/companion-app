@@ -1,26 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<body>
-    <header>
-        <h1 class="headline">headline</h1>
-    </header>
+  <body>
+    <div class="svg__index">
+      <header class="header__index">
+        <h1 class="page-title">DASHBOARD</h1>
+      </header>
+    </div>
+
+    <main class="main__index">
+      <h2 class="section-title h2__index">Your Code Buddy for Today:</h2>
+      <ul class="list__buddy">
+        <li class="name buddyname-top">Sudanka Bakalowits</li>
+        <li class="name buddyname-bottom">Yasaman Foroutan</li>
+      </ul>
+
+      <h2 class="section-title h2__index">Your current Team:</h2>
+      <ul class="list__team">
+        <li class="name">Sudanka Bakalowits</li>
+        <li class="name">Yasaman Foroutan</li>
+        <li class="name">Chioke Okonkwo</li>
+        <li class="name">Maria José Botín</li>
+        <li class="name">Tikhon Yaroslavsky</li>
+      </ul>
+
+      <section class="section-journal mobile">
+        <h2 class="section-title dashboard-card-title">Yesterdays Journal:</h2>
+        <div class="card">
+          <h3 class="card-label mb-1 mt-1">Rating:</h3>
+
+          <!--RATING-->
+          <div class="rating__display flex-row">
+            <img src="./img/Star.svg" alt="" />
+            <img src="./img/Star.svg" alt="" />
+            <img src="./img/Star.svg" alt="" />
+            <img src="./img/Star Copy 8.svg" alt="" />
+            <img src="./img/Star Copy 8.svg" alt="" />
+          </div>
+
+          <!--Comprehension-->
+          <h3 class="card-label mb-1 mt-1">Comprehension:</h3>
+          <div class="comprehension__display flex-row">
+            <img src="./img/Rectangle Copy 3.svg" alt="" />
+            <img src="./img/Rectangle Copy 3.svg" alt="" />
+            <img src="./img/Rectangle Copy 3.svg" alt="" />
+            <img src="./img/Rectangle Copy 3.svg" alt="" />
+            <img src="./img/Rectangle Copy 3.svg" alt="" />
+            <img src="./img/Rectangle Copy 3.svg" alt="" />
+            <img src="./img/Rectangle Copy 3.svg" alt="" />
+            <img src="./img/Rectangle Copy 13.svg" alt="" />
+            <img src="./img/Rectangle Copy 13.svg" alt="" />
+            <img src="./img/Rectangle Copy 13.svg" alt="" />
+          </div>
+
+          <!--Motto-->
+          <h3 class="card-label mb-1 mt-1">Motto:</h3>
+          <p class="motto">&bdquo;Thats life in the city&ldquo;</p>
+
+          <!--Notes-->
+          <h3 class="card-label mb-1 mt-1">Notes:</h3>
+          <p class="card-paragraph">
+            Si sine causa? quae fuerit causa, mox videro; interea hoc tenebo, si
+            mihi.  Et quidem se repellere, idque instituit docere sic omne
+            animal, simul atque.
+          </p>
+        </div>
+      </section>
+    </main>
+
     <footer class="footer">
-        <nav class="navbar">
-            <a href="index.html"><img class="navbar__icon" src="img/DashboardIcon.svg" alt="Dashboard Icon"></a>
-            <a href="buddylist.html"><img class="navbar__icon" src="img/BuddyIconlight.svg" alt="Buddy Icon"></a>
-            <a href="teams.html"><img class="navbar__icon" src="img/TeamIconlight.svg" alt="Team Icon"></a>
-            <a href="energy.html"><img class="navbar__icon" src="img/EnergyIconlight.svg" alt="Energy Icon"></a>
-            <a href="journal.html"><img class="navbar__icon" src="img/JournalIconlight.svg" alt="Journal Icon"></a>
-        </nav>
+      <nav class="navbar">
+        <a href="index.html"
+          ><img
+            class="navbar__icon"
+            src="img/DashboardIcon.svg"
+            alt="Dashboard Icon"
+        /></a>
+        <a href="buddylist.html"
+          ><img
+            class="navbar__icon"
+            src="img/BuddyIconlight.svg"
+            alt="Buddy Icon"
+        /></a>
+        <a href="teams.html"
+          ><img
+            class="navbar__icon"
+            src="img/TeamIconlight.svg"
+            alt="Team Icon"
+        /></a>
+        <a href="energy.html"
+          ><img
+            class="navbar__icon"
+            src="img/EnergyIconlight.svg"
+            alt="Energy Icon"
+        /></a>
+        <a href="journal.html"
+          ><img
+            class="navbar__icon"
+            src="img/JournalIconlight.svg"
+            alt="Journal Icon"
+        /></a>
+      </nav>
     </footer>
-</body>
-
+  </body>
 </html>
