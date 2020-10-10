@@ -12,6 +12,10 @@ body {
   justify-content: center;
 }
 
+main {
+	margin-bottom: 150px !important;
+}
+
 .footer {
   width: 100%;
   position: fixed;
