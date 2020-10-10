@@ -1,0 +1,150 @@
+.chart {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.layout-grid {
+	width: 315px;
+	height: 208px;
+	display: grid;
+	grid-template-rows: 7fr 21fr 21fr 21fr 21fr 13fr;
+	grid-template-columns: 36fr 13fr 56fr 56fr 56fr 56fr 42fr;
+}
+
+.grid-cell {
+	align-self: end;
+}
+
+/*
+  .grid-cell:not(:nth-child(7n-6)) {
+    border-bottom: 1px solid blue;
+  }
+  
+  .grid-cell:nth-last-child(-n+7) {
+    border-bottom: none;
+  }
+  */
+
+.grid-cell-left {
+	margin-bottom: -3px;
+	align-self: end;
+	justify-self: left;
+}
+
+.grid-cell-bottom {
+	align-self: end;
+	padding-top: 10px;
+}
+
+.bar-start {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.line {
+	width: 100%;
+	height: 1px;
+	background-color: var(--primary-light);
+}
+
+.bar-start > .line {
+	position: absolute;
+	bottom: 0;
+}
+
+.left-bar {
+	position: absolute;
+	border-radius: 12px 12px 0 0;
+	background-color: var(--secondary);
+	width: 21.5%;
+	bottom: 0;
+}
+
+.right-bar {
+	position: absolute;
+	border-radius: 12px 12px 0 0;
+	background-color: var(--primary);
+	width: 21.5%;
+	bottom: 0;
+	left: 21.5%;
+}
+
+.left-bar1 {
+	height: 422%;
+}
+
+.right-bar1 {
+	height: 371.5%;
+}
+
+.left-bar2 {
+	height: 316%;
+}
+
+.right-bar2 {
+	height: 357%;
+}
+
+.left-bar3 {
+	height: 378.5%;
+}
+
+.right-bar3 {
+	height: 263%;
+}
+
+.left-bar4 {
+	height: 173.5%;
+}
+
+.right-bar4 {
+	height: 229%;
+}
+
+.left-bar5 {
+	height: 113%;
+	width: 28.6%;
+}
+.right-bar5 {
+	height: 79.5%;
+	width: 28.6%;
+	left: 28.6%;
+}
+
+.legend {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+	gap: 10px;
+	margin-top: 10px;
+	margin-bottom: 35px;
+}
+
+.legend__tag {
+	border-radius: 3px;
+}
+
+.legend__tag--left {
+	background-color: var(--primary);
+	width: 106px;
+	height: 20px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 18px;
+	color: white;
+	text-align: center;
+	padding-top: 1px;
+}
+
+.legend__tag--right {
+	background-color: var(--secondary-lighter);
+	width: 42px;
+	height: 20px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 18px;
+	color: var(--secondary);
+	text-align: center;
+	padding-top: 1px;
+}
