@@ -1,13 +1,13 @@
 .header__energy {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 376px;
-  height: 59px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 376px;
+	height: 59px;
 }
 .svg__energy {
-  background-image: url(/src/img/background_shape_1.svg);
-  background-size: cover;
-  margin-bottom: 30px;
+	background-image: url(../../img/background_shape_1.svg);
+	background-size: cover;
+	margin-bottom: 30px;
 }
