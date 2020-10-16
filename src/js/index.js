@@ -1,7 +1,5 @@
 // ROOT INDEX
 const rootPage = document.querySelector("#indexPage");
-const contentArea = document.querySelector("#content");
-contentArea.innerHTML = rootPage.innerHTML;
 
 // Link Config
 const DASHBOARD_PAGE = "navDash";
@@ -15,22 +13,24 @@ const JOURNAL_ENTRY_PAGE = "journalEntryButton";
 const navBar = document.querySelector("#navBar");
 const journalEntryButton = document.querySelector("#journalEntryButton");
 
-console.log(
-  "[journalEntryButton ID VALUE]",
-  journalEntryButton.attributes.id.value
-);
-
 // Event listeners
 navBar.addEventListener("click", (event) => {
   const clickedID = event.target.attributes.id.value;
-  console.log("clicked Link ID:", clickedID);
-  return navHandler(clickedID);
+
+  if (clickedID !== 'navBar') {
+    document.querySelectorAll('.content').forEach(item => {
+      if (! item.classList.contains('hidden')) {
+        item.classList.add('hidden');
+      };
+    });
+
+    toggleNav(event);
+    return navHandler(clickedID);
+  };
 });
 
 journalEntryButton.addEventListener("click", (event) => {
-  console.log("CLICKED EVENT:", event.target.attributes.id.value);
   const clickedID = event.target.attributes.id.value;
-  console.log("clicked Link ID:", clickedID);
   return navHandler(clickedID);
 });
 
@@ -41,49 +41,71 @@ function navHandler(pageName) {
   switch (pageName) {
     case DASHBOARD_PAGE:
       let loadIndexPage = document.querySelector("#indexPage");
-      contentArea.innerHTML = loadIndexPage.innerHTML;
-      toggleNavButtons();
+      loadIndexPage.classList.remove('hidden');
       break;
 
     case BUDDY_PAGE:
       let loadBuddyPage = document.getElementById("buddyPage");
-      contentArea.innerHTML = loadBuddyPage.innerHTML;
+      loadBuddyPage.classList.remove('hidden');
       break;
 
     case TEAM_PAGE:
       let loadTeamsPage = document.querySelector("#teamsPage");
-      contentArea.innerHTML = loadTeamsPage.innerHTML;
+      loadTeamsPage.classList.remove('hidden');
       break;
 
     case ENERGY_PAGE:
       let loadEnergyPage = document.querySelector("#energyPage");
-      contentArea.innerHTML = loadEnergyPage.innerHTML;
+      loadEnergyPage.classList.remove('hidden');
       break;
 
     case JOURNAL_PAGE:
       let loadJournalPage = document.querySelector("#journalPage");
-      contentArea.innerHTML = loadJournalPage.innerHTML;
+      loadJournalPage.classList.remove('hidden');
       break;
 
     case JOURNAL_ENTRY_PAGE:
       let loadJournalEntryPage = document.querySelector("#journalEntryPage");
-      contentArea.innerHTML = loadJournalEntryPage.innerHTML;
+      loadJournalEntryPage.classList.remove('hidden');
       break;
 
     default:
-      contentArea.innerHTML = rootPage.innerHTML;
       break;
   };
 };
 
-/*
-function toggleNavButtons() {
-  let allButtons = document.querySelectorAll('.navbar__icon');
-  allButtons.forEach(button => {
-    if (button.src.includes('light')) {
-      button.src = button.src.replace('light','');
-      console.log(button.src);
-    }
+function toggleNav(event) {
+  let allIcons = document.querySelectorAll('.navbar__icon');
+  allIcons.forEach((icon) => {
+    icon.classList.remove('navbar__icon--active');
   });
+  event.target.classList.add('navbar__icon--active');
 };
-*/
+
+
+// const navImages = [
+//   'DashboardIconlight',
+//   'BuddyIconlight',
+//   'TeamIconlight',
+//   'EnergyIconlight',
+//   'JournalIconlight',
+// ];
+
+// const navItems = document.querySelectorAll('.navbar img');
+
+// navItems.forEach((navItem, index) => {
+//   const imgName = index === 0 ? navImages[index].replace('light','') : navImages[index];
+//   navItem.src = 'img/' + imgName + '.svg';
+// });
+
+// function toggleNavButtons() {
+//   let allButtons = document.querySelectorAll('.navbar__icon');
+//   allButtons.forEach(button => {
+//     if (button.src.includes('light')) {
+//       button.src = button.src.replace('light','');
+//       console.log(button.src);
+//     }
+//   });
+// };
+
+

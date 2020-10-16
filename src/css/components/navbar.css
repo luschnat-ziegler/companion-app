@@ -16,8 +16,9 @@
 
 .navbar__icon {
 	height: 20px;
+	opacity: 0.5;
 }
 
-.navbar__icon--light {
-	opacity: 0.65;
+.navbar__icon--active {
+	opacity: 1;
 }
