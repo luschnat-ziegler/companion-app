@@ -15,16 +15,6 @@
 	align-self: end;
 }
 
-/*
-  .grid-cell:not(:nth-child(7n-6)) {
-    border-bottom: 1px solid blue;
-  }
-  
-  .grid-cell:nth-last-child(-n+7) {
-    border-bottom: none;
-  }
-  */
-
 .grid-cell-left {
 	margin-bottom: -3px;
 	align-self: end;
