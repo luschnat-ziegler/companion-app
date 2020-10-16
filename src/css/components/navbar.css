@@ -17,3 +17,7 @@
 .navbar__icon {
 	height: 20px;
 }
+
+.navbar__icon--light {
+	opacity: 0.65;
+}

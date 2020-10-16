@@ -42,6 +42,7 @@ function navHandler(pageName) {
     case DASHBOARD_PAGE:
       let loadIndexPage = document.querySelector("#indexPage");
       contentArea.innerHTML = loadIndexPage.innerHTML;
+      toggleNavButtons();
       break;
 
     case BUDDY_PAGE:
@@ -72,5 +73,17 @@ function navHandler(pageName) {
     default:
       contentArea.innerHTML = rootPage.innerHTML;
       break;
-  }
-}
+  };
+};
+
+/*
+function toggleNavButtons() {
+  let allButtons = document.querySelectorAll('.navbar__icon');
+  allButtons.forEach(button => {
+    if (button.src.includes('light')) {
+      button.src = button.src.replace('light','');
+      console.log(button.src);
+    }
+  });
+};
+*/
