@@ -18,12 +18,7 @@ navBar.addEventListener("click", (event) => {
   const clickedID = event.target.attributes.id.value;
 
   if (clickedID !== 'navBar') {
-    document.querySelectorAll('.content').forEach(item => {
-      if (! item.classList.contains('hidden')) {
-        item.classList.add('hidden');
-      };
-    });
-
+    clearContent();
     toggleNav(event);
     return navHandler(clickedID);
   };
@@ -31,11 +26,7 @@ navBar.addEventListener("click", (event) => {
 
 journalEntryButton.addEventListener("click", (event) => {
   const clickedID = event.target.attributes.id.value;
-  document.querySelectorAll('.content').forEach(item => {
-    if (! item.classList.contains('hidden')) {
-      item.classList.add('hidden');
-    };
-  });
+  clearContent();
   return navHandler(clickedID);
 });
 
@@ -85,6 +76,14 @@ function toggleNav(event) {
     icon.classList.remove('navbar__icon--active');
   });
   event.target.classList.add('navbar__icon--active');
+};
+
+function clearContent() {
+  document.querySelectorAll('.content').forEach(item => {
+    if (! item.classList.contains('hidden')) {
+      item.classList.add('hidden');
+    };
+  });
 };
 
 
