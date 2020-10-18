@@ -31,6 +31,11 @@ navBar.addEventListener("click", (event) => {
 
 journalEntryButton.addEventListener("click", (event) => {
   const clickedID = event.target.attributes.id.value;
+  document.querySelectorAll('.content').forEach(item => {
+    if (! item.classList.contains('hidden')) {
+      item.classList.add('hidden');
+    };
+  });
   return navHandler(clickedID);
 });
 
