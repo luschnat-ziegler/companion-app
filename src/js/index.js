@@ -12,6 +12,8 @@ const JOURNAL_ENTRY_PAGE = "journalEntryButton";
 // DOM Elements
 const navBar = document.querySelector("#navBar");
 const journalEntryButton = document.querySelector("#journalEntryButton");
+const journalSaveButton = document.querySelector('.btn-save');
+const journalCancelButton = document.querySelector('.btn-cancel');
 
 // Event listeners
 navBar.addEventListener("click", (event) => {
@@ -28,6 +30,17 @@ journalEntryButton.addEventListener("click", (event) => {
   const clickedID = event.target.attributes.id.value;
   clearContent();
   return navHandler(clickedID);
+});
+
+journalSaveButton.addEventListener('click', () => {
+  clearContent();
+  
+  return navHandler('navJournal');
+});
+
+journalCancelButton.addEventListener('click', () => {
+  clearContent();
+  return navHandler('navJournal');
 });
 
 // NavBar logic
