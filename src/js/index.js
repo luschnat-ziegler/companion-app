@@ -1,5 +1,9 @@
 // ROOT INDEX
 const rootPage = document.querySelector("#indexPage");
+const hiddenStar = document.querySelector('#hidden-star');
+const hiddenStarSource = hiddenStar.attributes.src.nodeValue;
+const hiddenOutlineStar = document.querySelector('#hidden-outlinestar');
+const hiddenOutlineStarSource = hiddenOutlineStar.attributes.src.nodeValue;
 
 // Link Config
 const DASHBOARD_PAGE = "navDash";
@@ -123,6 +127,7 @@ function clearContent() {
 //   });
 // };
 
+
 const comprehensionImgs = document.querySelectorAll('.comprehension__display-create > img');
 comprehensionImgs.forEach((img) => {
   img.addEventListener('click', (event) => {
@@ -130,3 +135,20 @@ comprehensionImgs.forEach((img) => {
     console.log(index);
   });
 });
+
+const ratingStars = document.querySelectorAll('.rating__display--create > img');
+ratingStars.forEach((img ) => {
+  img.addEventListener('click',(event) => {
+    clearStars();
+    let index = Number(event.target.id[event.target.id.length-1]);
+    for (let i = 0; i <= index; i++) {
+      ratingStars[i].src=hiddenStarSource;
+    };
+  });
+});
+function clearStars() {
+  const allStars = document.querySelectorAll('.rating__display--create > img');
+  allStars.forEach(star => {
+    star.src = hiddenOutlineStarSource;
+  });
+};
