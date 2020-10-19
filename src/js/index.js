@@ -4,6 +4,10 @@ const hiddenStar = document.querySelector('#hidden-star');
 const hiddenStarSource = hiddenStar.attributes.src.nodeValue;
 const hiddenOutlineStar = document.querySelector('#hidden-outlinestar');
 const hiddenOutlineStarSource = hiddenOutlineStar.attributes.src.nodeValue;
+const hiddenRectangle = document.querySelector('#hidden-rectangle');
+const hiddenRectangleSource = hiddenRectangle.attributes.src.nodeValue;
+const hiddenOutlineRectangle = document.querySelector('#hidden-outlinerectangle');
+const hiddenOutlineRectangleSource = hiddenOutlineRectangle.attributes.src.nodeValue;
 
 // Link Config
 const DASHBOARD_PAGE = "navDash";
@@ -131,10 +135,19 @@ function clearContent() {
 const comprehensionImgs = document.querySelectorAll('.comprehension__display-create > img');
 comprehensionImgs.forEach((img) => {
   img.addEventListener('click', (event) => {
+    clearRectangle();
     let index = Number(event.target.id[event.target.id.length-1]);
-    console.log(index);
+    for (let i = 0; i <= index; i++) {
+      comprehensionImgs[i].src = hiddenRectangleSource; 
+    };
   });
 });
+function clearRectangle() {
+  const allRectangle = document.querySelectorAll('.comprehension__display-create > img');
+  allRectangle.forEach(rectangle => {
+    rectangle.src = hiddenOutlineRectangleSource;
+  });
+};
 
 const ratingStars = document.querySelectorAll('.rating__display--create > img');
 ratingStars.forEach((img ) => {
@@ -152,3 +165,4 @@ function clearStars() {
     star.src = hiddenOutlineStarSource;
   });
 };
+
