@@ -105,33 +105,6 @@ function clearContent() {
   });
 };
 
-
-// const navImages = [
-//   'DashboardIconlight',
-//   'BuddyIconlight',
-//   'TeamIconlight',
-//   'EnergyIconlight',
-//   'JournalIconlight',
-// ];
-
-// const navItems = document.querySelectorAll('.navbar img');
-
-// navItems.forEach((navItem, index) => {
-//   const imgName = index === 0 ? navImages[index].replace('light','') : navImages[index];
-//   navItem.src = 'img/' + imgName + '.svg';
-// });
-
-// function toggleNavButtons() {
-//   let allButtons = document.querySelectorAll('.navbar__icon');
-//   allButtons.forEach(button => {
-//     if (button.src.includes('light')) {
-//       button.src = button.src.replace('light','');
-//       console.log(button.src);
-//     }
-//   });
-// };
-
-
 const comprehensionImgs = document.querySelectorAll('.comprehension__display-create > img');
 comprehensionImgs.forEach((img) => {
   img.addEventListener('click', (event) => {
@@ -142,6 +115,7 @@ comprehensionImgs.forEach((img) => {
     };
   });
 });
+
 function clearRectangle() {
   const allRectangle = document.querySelectorAll('.comprehension__display-create > img');
   allRectangle.forEach(rectangle => {
@@ -159,6 +133,7 @@ ratingStars.forEach((img ) => {
     };
   });
 });
+
 function clearStars() {
   const allStars = document.querySelectorAll('.rating__display--create > img');
   allStars.forEach(star => {
