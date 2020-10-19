@@ -124,7 +124,7 @@ function clearRectangle() {
 };
 
 const ratingStars = document.querySelectorAll('.rating__display--create > img');
-ratingStars.forEach((img ) => {
+ratingStars.forEach((img) => {
   img.addEventListener('click',(event) => {
     clearStars();
     let index = Number(event.target.id[event.target.id.length-1]);
