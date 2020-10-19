@@ -18,7 +18,6 @@ const journalCancelButton = document.querySelector('.btn-cancel');
 // Event listeners
 navBar.addEventListener("click", (event) => {
   const clickedID = event.target.attributes.id.value;
-
   if (clickedID !== 'navBar') {
     clearContent();
     toggleNav(event);
@@ -34,7 +33,6 @@ journalEntryButton.addEventListener("click", (event) => {
 
 journalSaveButton.addEventListener('click', () => {
   clearContent();
-  
   return navHandler('navJournal');
 });
 
@@ -125,4 +123,10 @@ function clearContent() {
 //   });
 // };
 
-
+const comprehensionImgs = document.querySelectorAll('.comprehension__display-create > img');
+comprehensionImgs.forEach((img) => {
+  img.addEventListener('click', (event) => {
+    let index = Number(event.target.id[event.target.id.length-1]);
+    console.log(index);
+  });
+});
