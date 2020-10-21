@@ -1,5 +1,7 @@
 // ROOT INDEX
 const rootPage = document.querySelector("#indexPage");
+
+// HIDDEN ELEMENTS
 const hiddenStar = document.querySelector('#hidden-star');
 const hiddenStarSource = hiddenStar.attributes.src.nodeValue;
 const hiddenOutlineStar = document.querySelector('#hidden-outlinestar');
@@ -17,7 +19,7 @@ const ENERGY_PAGE = "navEnergy";
 const JOURNAL_PAGE = "navJournal";
 const JOURNAL_ENTRY_PAGE = "journalEntryButton";
 
-// DOM Elements
+// NAV ELEMENTS
 const navBar = document.querySelector("#navBar");
 const journalEntryButton = document.querySelector("#journalEntryButton");
 const journalSaveButton = document.querySelector('.btn-save');
@@ -89,6 +91,8 @@ function navHandler(pageName) {
   };
 };
 
+// NAV FUNCTIONS
+
 function toggleNav(event) {
   let allIcons = document.querySelectorAll('.navbar__icon');
   allIcons.forEach((icon) => {
@@ -105,11 +109,12 @@ function clearContent() {
   });
 };
 
+// RATING AND COMPREHENSION PICKERS
+
 const comprehensionImgs = document.querySelectorAll('.comprehension__display-create > img');
-comprehensionImgs.forEach((img) => {
+comprehensionImgs.forEach((img, index) => {
   img.addEventListener('click', (event) => {
     clearRectangle();
-    let index = Number(event.target.id[event.target.id.length-1]);
     for (let i = 0; i <= index; i++) {
       comprehensionImgs[i].src = hiddenRectangleSource; 
     };
@@ -124,10 +129,9 @@ function clearRectangle() {
 };
 
 const ratingStars = document.querySelectorAll('.rating__display--create > img');
-ratingStars.forEach((img) => {
+ratingStars.forEach((img, index) => {
   img.addEventListener('click',(event) => {
     clearStars();
-    let index = Number(event.target.id[event.target.id.length-1]);
     for (let i = 0; i <= index; i++) {
       ratingStars[i].src=hiddenStarSource;
     };
