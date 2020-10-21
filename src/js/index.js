@@ -25,6 +25,11 @@ const journalEntryButton = document.querySelector("#journalEntryButton");
 const journalSaveButton = document.querySelector('.btn-save');
 const journalCancelButton = document.querySelector('.btn-cancel');
 
+// RATE TODAY ELEMENTS
+
+const comprehensionImgs = document.querySelectorAll('.comprehension__display-create > img');
+const ratingStars = document.querySelectorAll('.rating__display--create > img');
+
 // Event listeners
 navBar.addEventListener("click", (event) => {
   const clickedID = event.target.attributes.id.value;
@@ -111,37 +116,21 @@ function clearContent() {
 
 // RATING AND COMPREHENSION PICKERS
 
-const comprehensionImgs = document.querySelectorAll('.comprehension__display-create > img');
 comprehensionImgs.forEach((img, index) => {
-  img.addEventListener('click', (event) => {
-    clearRectangle();
+  img.addEventListener('click', () => {
+    comprehensionImgs.forEach(rect => rect.src = hiddenOutlineRectangleSource);
     for (let i = 0; i <= index; i++) {
       comprehensionImgs[i].src = hiddenRectangleSource; 
     };
   });
 });
 
-function clearRectangle() {
-  const allRectangle = document.querySelectorAll('.comprehension__display-create > img');
-  allRectangle.forEach(rectangle => {
-    rectangle.src = hiddenOutlineRectangleSource;
-  });
-};
-
-const ratingStars = document.querySelectorAll('.rating__display--create > img');
 ratingStars.forEach((img, index) => {
-  img.addEventListener('click',(event) => {
-    clearStars();
+  img.addEventListener('click',() => {
+    ratingStars.forEach(star => star.src = hiddenOutlineStarSource);
     for (let i = 0; i <= index; i++) {
       ratingStars[i].src=hiddenStarSource;
     };
   });
 });
-
-function clearStars() {
-  const allStars = document.querySelectorAll('.rating__display--create > img');
-  allStars.forEach(star => {
-    star.src = hiddenOutlineStarSource;
-  });
-};
 
