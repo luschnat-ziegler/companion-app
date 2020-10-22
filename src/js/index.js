@@ -133,4 +133,3 @@ ratingStars.forEach((img, index) => {
     };
   });
 });
-
