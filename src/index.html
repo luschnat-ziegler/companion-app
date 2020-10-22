@@ -477,6 +477,7 @@
       <section class="section__journal formfields">
         <h2 class="section-title uppercase">Today, 12.07.2020</h2>
 
+        <form action="">
         <!--RATING-->
         <h3 class="card-label mb-1 mt-1">Rating:</h3>
         <div class="rating__display--create flex-row">
@@ -505,8 +506,10 @@
         <!--FORM-FIELDS-->
         <div class="form__fields">
           <h3 class="card-label mb-1 mt-1">Motto:</h3>
-          <input class="form-paragraph" type="text" />
+          <input class="form-paragraph" type="text" name="motto">
           <h3 class="card-label mb-1 mt-1">Notes:</h3>
+          <input type="text" class="form-paragraph" name="notes">
+          <!--
           <textarea
             class="form-paragraph"
             name=""
@@ -514,10 +517,11 @@
             cols="30"
             rows="10"
           ></textarea>
-
+          -->
           <button class="btn__journal btn-cancel">Cancel</button>
-          <button class="btn__journal btn-save text-white">Save</button>
+          <button class="btn__journal btn-save text-white" type="submit">Save</button>
         </div>
+        </form>
       </section>
     </div>
 

@@ -133,3 +133,26 @@ ratingStars.forEach((img, index) => {
     };
   });
 });
+
+// FORM
+
+const journalForm = document.querySelector('form');
+
+journalForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const list = localStorage.getItem('history') 
+    ? JSON.parse(localStorage.getItem('history'))
+    : [];
+  
+  const activeStars = document.querySelectorAll(`.rating__display--create > img[src='${hiddenStarSource}']`);
+  const activeRects = document.querySelectorAll(`.comprehension__display-create > img[src='${hiddenRectangleSource}']`);
+  
+  const rating = activeStars.length;
+  const comprehension = activeRects.length;
+  const motto = journalForm.motto.value;
+  const notes = journalForm.notes.value;
+  const newEntry = { rating:rating, comprehension:comprehension, motto:motto, notes:notes };
+
+  localStorage.setItem('history', JSON.stringify([...list, newEntry]));
+});
