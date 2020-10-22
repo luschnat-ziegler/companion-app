@@ -152,7 +152,15 @@ journalForm.addEventListener('submit', (event) => {
   const comprehension = activeRects.length;
   const motto = journalForm.motto.value;
   const notes = journalForm.notes.value;
+
   const newEntry = { rating:rating, comprehension:comprehension, motto:motto, notes:notes };
 
   localStorage.setItem('history', JSON.stringify([...list, newEntry]));
+
+  journalForm.motto.value = '';
+  journalForm.notes.value = '';
+
+  ratingStars.forEach(star => star.src = hiddenOutlineStarSource);
+  comprehensionImgs.forEach(rect => rect.src = hiddenOutlineRectangleSource);
+
 });
