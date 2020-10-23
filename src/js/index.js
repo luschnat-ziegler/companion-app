@@ -259,7 +259,7 @@ function addTeam(inputArray,index) {
 
 // Journal rendering
 
-const journalParent = document.querySelector('.journal__main');
+const journalParent = document.querySelector('.cardparent');
 const dummyObject = {id:"7",rating:4,comprehension:5,motto:"motto",notes:"notes"};
 
 function renderJournal(responseArray){
@@ -332,27 +332,3 @@ function addJournalCard(inputObject) {
   notesText.innerText = inputObject.notes;
   cardDiv.appendChild(notesText);
 }
-
-
-
-/*
-
-!--CARD-->
-        
-            <!--Notes-->
-            <h3 class="card-label mb-1 mt-1">Notes:</h3>
-            <p class="card-paragraph">
-              Si sine causa? quae fuerit causa, mox videro; interea hoc tenebo,
-              si mihi.  Et quidem se repellere, idque instituit docere sic omne
-              animal, simul atque.
-            </p>
-          </div>
-
-
-Journal Cards:
-- Create card from api entry -> function which returns the corresponding DOM node
-- Append all nodes in loop over array from API
-
-section."section__journal mobile"
-
-*/
