@@ -197,10 +197,19 @@ function getTeams() {
 
 getTeams();
 
+// API Journal
+
+function getJournal() {
+  fetch('https://muc-2020-w1-student-api.vercel.app/api/journals')
+  .then(result => result.json())
+  .then(data => renderJournal(data))
+  .catch(error => console.error(error));
+};
+
+getJournal();
 
 // Buddy rendering
 
-const dummyResponse = [["Marian", "Tobi"],["Philipp", "Marcel"],["Henna", "Fabian"]];
 const buddiesParent = document.querySelector('.main__buddy');
 
 function renderBuddies(responseArray) {
@@ -223,10 +232,7 @@ function addBuddies(inputArray) {
 
 // Team rendering
 
-const dummyTeams = [["Marian", "Tobi", "Arthur"],["Philipp", "Marcel", "Gadget"],["Henna", "Fabian", "Domi"]];
 const teamsParent = document.querySelector('.main__team');
-
-renderTeams(dummyTeams);
 
 function renderTeams(responseArray){
   teamsParent.innerHTML = '';
@@ -253,65 +259,86 @@ function addTeam(inputArray,index) {
 
 // Journal rendering
 
-const journalParent = document.querySelector('.journal__main')
-console.log(journalParent);
+const journalParent = document.querySelector('.journal__main');
 const dummyObject = {id:"7",rating:4,comprehension:5,motto:"motto",notes:"notes"};
 
-const cardDiv = document.createElement('div');
-cardDiv.classList.add('card');
-journalParent.appendChild(cardDiv);
-const cardTitle = document.createElement('h2');
-cardTitle.classList.add('section-title');
-cardTitle.innerText = "DUMMY TEXT";
-cardDiv.appendChild(cardTitle);
-const cardLabel = document.createElement('h3');
-cardLabel.classList.add('card-label','mb-1','mt-1');
-cardLabel.innerText = "Rating:";
-cardDiv.appendChild(cardLabel);
+function renderJournal(responseArray){
+  journalParent.innerHTML = '';
+  responseArray.forEach((card) => addJournalCard(card));
+}
 
-const ratingDiv = document.createElement('div');
-ratingDiv.classList.add('rating__display', 'flex-row');
-cardDiv.appendChild(ratingDiv);
-
-
+function addJournalCard(inputObject) {
+  
+  const cardDiv = document.createElement('div');
+  cardDiv.classList.add('card');
+  journalParent.appendChild(cardDiv);
+  const cardTitle = document.createElement('h2');
+  cardTitle.classList.add('section-title');
+  cardTitle.innerText = "DUMMY DATE";
+  cardDiv.appendChild(cardTitle);
+  const cardLabel = document.createElement('h3');
+  cardLabel.classList.add('card-label','mb-1','mt-1');
+  cardLabel.innerText = "Rating:";
+  cardDiv.appendChild(cardLabel);
+  
+  const ratingDiv = document.createElement('div');
+  ratingDiv.classList.add('rating__display', 'flex-row');
+  cardDiv.appendChild(ratingDiv);
+  for (let index = 0; index < 5; index++) {
+    const star = document.createElement('img');
+    if (index <= inputObject.rating-1) {
+      star.src = hiddenStarSource;
+    } else {
+      star.src = hiddenStar8Source;
+    };
+    ratingDiv.appendChild(star);
+  };
+  
+  const cardLabel2 = document.createElement('h3');
+  cardLabel2.classList.add('card-label','mb-1','mt-1');
+  cardLabel2.innerText = "Comprehension:";
+  cardDiv.appendChild(cardLabel2);
+  
+  const comprehensionDiv = document.createElement('div');
+  comprehensionDiv.classList.add('comprehension__display', 'flex-row');
+  cardDiv.appendChild(comprehensionDiv);
+  for (let index = 0; index < 10; index++) {
+    const rect = document.createElement('img');
+    if(index <= inputObject.comprehension-1) {
+      rect.src = hiddenRectangle3Source;
+    } else {
+      rect.src = hiddenRectangle13Source;
+    };
+    comprehensionDiv.appendChild(rect);
+  };
+  
+  const mottoLabel = document.createElement('h3');
+  mottoLabel.classList.add('card-label', 'mb-1', 'mt-1');
+  mottoLabel.innerText = 'Motto:';
+  cardDiv.appendChild(mottoLabel);
+  
+  const mottoText = document.createElement('p');
+  mottoText.classList.add('motto');
+  mottoText.innerText = inputObject.motto;
+  cardDiv.appendChild(mottoText);
+  
+  const notesLabel = document.createElement('h3');
+  notesLabel.classList.add('card-label', 'mb-1', 'mt-1');
+  notesLabel.innerText = "Notes:";
+  cardDiv.appendChild(notesLabel);
+  
+  const notesText = document.createElement('p');
+  notesText.classList.add('card-paragraph');
+  notesText.innerText = inputObject.notes;
+  cardDiv.appendChild(notesText);
+}
 
 
 
 /*
 
-<!--CARD-->
-          <div class="card">
-            <h2 class="section-title">Yesterday</h2>
-            <h3 class="card-label mb-1 mt-1">Rating:</h3>
-
-            <!--RATING-->
-            <div class="rating__display flex-row">
-              <img src="./img/Star.svg" alt="" />
-              <img src="./img/Star.svg" alt="" />
-              <img src="./img/Star.svg" alt="" />
-              <img src="./img/Star Copy 8.svg" alt="" />
-              <img src="./img/Star Copy 8.svg" alt="" />
-            </div>
-
-            <!--Comprehension-->
-            <h3 class="card-label mb-1 mt-1">Comprehension:</h3>
-            <div class="comprehension__display flex-row">
-              <img src="./img/Rectangle Copy 3.svg" alt="" />
-              <img src="./img/Rectangle Copy 3.svg" alt="" />
-              <img src="./img/Rectangle Copy 3.svg" alt="" />
-              <img src="./img/Rectangle Copy 3.svg" alt="" />
-              <img src="./img/Rectangle Copy 3.svg" alt="" />
-              <img src="./img/Rectangle Copy 3.svg" alt="" />
-              <img src="./img/Rectangle Copy 3.svg" alt="" />
-              <img src="./img/Rectangle Copy 13.svg" alt="" />
-              <img src="./img/Rectangle Copy 13.svg" alt="" />
-              <img src="./img/Rectangle Copy 13.svg" alt="" />
-            </div>
-
-            <!--Motto-->
-            <h3 class="card-label mb-1 mt-1">Motto:</h3>
-            <p class="motto">&bdquo;Thats life in the city&ldquo;</p>
-
+!--CARD-->
+        
             <!--Notes-->
             <h3 class="card-label mb-1 mt-1">Notes:</h3>
             <p class="card-paragraph">
