@@ -167,10 +167,19 @@ journalForm.addEventListener('submit', (event) => {
 
 });
 
+// API testing
+
+function getBuddies() {
+    fetch('https://muc-2020-w1-student-api.vercel.app/api/buddies')
+    .then(result => result.json())
+    .then(data => renderBuddies(data))
+    .catch(error => console.error(error));
+};
+
+getBuddies();
+
 const dummyResponse = [["Marian", "Tobi"],["Philipp", "Marcel"],["Henna", "Fabian"]];
 const buddiesParent = document.querySelector('.main__buddy');
-
-renderBuddies(dummyResponse);
 
 function renderBuddies(responseArray) {
   buddiesParent.innerHTML = '';
@@ -189,6 +198,8 @@ function addBuddies(inputArray) {
     buddyLi.innerText = buddy;
   });
 };
+
+// Team rendering
 
 const dummyTeams = [["Marian", "Tobi", "Arthur"],["Philipp", "Marcel", "Gadget"],["Henna", "Fabian", "Domi"]];
 const teamsParent = document.querySelector('.main__team');
