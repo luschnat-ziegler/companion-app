@@ -11,6 +11,14 @@ const hiddenRectangleSource = hiddenRectangle.attributes.src.nodeValue;
 const hiddenOutlineRectangle = document.querySelector('#hidden-outlinerectangle');
 const hiddenOutlineRectangleSource = hiddenOutlineRectangle.attributes.src.nodeValue;
 
+const hiddenStar8 = document.querySelector("#copy8")
+const hiddenStar8Source = hiddenStar8.attributes.src.nodeValue;
+const hiddenRectangle3 = document.querySelector("#copy3");
+const hiddenRectangle3Source = hiddenRectangle3.attributes.src.nodeValue;
+const hiddenRectangle13 = document.querySelector("#copy13");
+const hiddenRectangle13Source = hiddenRectangle13.attributes.src.nodeValue;
+
+
 // Link Config
 const DASHBOARD_PAGE = "navDash";
 const BUDDY_PAGE = "navBuddy";
@@ -167,7 +175,7 @@ journalForm.addEventListener('submit', (event) => {
 
 });
 
-// API testing
+// API Buddies
 
 function getBuddies() {
     fetch('https://muc-2020-w1-student-api.vercel.app/api/buddies')
@@ -177,6 +185,20 @@ function getBuddies() {
 };
 
 getBuddies();
+
+// API Teams
+
+function getTeams() {
+  fetch('https://muc-2020-w1-student-api.vercel.app/api/teams')
+  .then(result => result.json())
+  .then(data => renderTeams(data))
+  .catch(error => console.error(error));
+};
+
+getTeams();
+
+
+// Buddy rendering
 
 const dummyResponse = [["Marian", "Tobi"],["Philipp", "Marcel"],["Henna", "Fabian"]];
 const buddiesParent = document.querySelector('.main__buddy');
@@ -229,29 +251,81 @@ function addTeam(inputArray,index) {
   })
 }
 
+// Journal rendering
+
+const journalParent = document.querySelector('.journal__main')
+console.log(journalParent);
+const dummyObject = {id:"7",rating:4,comprehension:5,motto:"motto",notes:"notes"};
+
+const cardDiv = document.createElement('div');
+cardDiv.classList.add('card');
+journalParent.appendChild(cardDiv);
+const cardTitle = document.createElement('h2');
+cardTitle.classList.add('section-title');
+cardTitle.innerText = "DUMMY TEXT";
+cardDiv.appendChild(cardTitle);
+const cardLabel = document.createElement('h3');
+cardLabel.classList.add('card-label','mb-1','mt-1');
+cardLabel.innerText = "Rating:";
+cardDiv.appendChild(cardLabel);
+
+const ratingDiv = document.createElement('div');
+ratingDiv.classList.add('rating__display', 'flex-row');
+cardDiv.appendChild(ratingDiv);
+
 
 
 
 
 /*
 
+<!--CARD-->
+          <div class="card">
+            <h2 class="section-title">Yesterday</h2>
+            <h3 class="card-label mb-1 mt-1">Rating:</h3>
 
-Teams:
-<h2 class="section-title">Team 1</h2>
-          <ul class="list__team">
-            <li class="name">Sudanka Bakalowits</li>
-            <li class="name">Yasaman Foroutan</li>
-            <li class="name">Chioke Okonkwo</li>
-            <li class="name">Maria José Botín</li>
-            <li class="name">Tikhon Yaroslavsky</li>
-          </ul>
+            <!--RATING-->
+            <div class="rating__display flex-row">
+              <img src="./img/Star.svg" alt="" />
+              <img src="./img/Star.svg" alt="" />
+              <img src="./img/Star.svg" alt="" />
+              <img src="./img/Star Copy 8.svg" alt="" />
+              <img src="./img/Star Copy 8.svg" alt="" />
+            </div>
 
-          main.main__team
-- 
+            <!--Comprehension-->
+            <h3 class="card-label mb-1 mt-1">Comprehension:</h3>
+            <div class="comprehension__display flex-row">
+              <img src="./img/Rectangle Copy 3.svg" alt="" />
+              <img src="./img/Rectangle Copy 3.svg" alt="" />
+              <img src="./img/Rectangle Copy 3.svg" alt="" />
+              <img src="./img/Rectangle Copy 3.svg" alt="" />
+              <img src="./img/Rectangle Copy 3.svg" alt="" />
+              <img src="./img/Rectangle Copy 3.svg" alt="" />
+              <img src="./img/Rectangle Copy 3.svg" alt="" />
+              <img src="./img/Rectangle Copy 13.svg" alt="" />
+              <img src="./img/Rectangle Copy 13.svg" alt="" />
+              <img src="./img/Rectangle Copy 13.svg" alt="" />
+            </div>
+
+            <!--Motto-->
+            <h3 class="card-label mb-1 mt-1">Motto:</h3>
+            <p class="motto">&bdquo;Thats life in the city&ldquo;</p>
+
+            <!--Notes-->
+            <h3 class="card-label mb-1 mt-1">Notes:</h3>
+            <p class="card-paragraph">
+              Si sine causa? quae fuerit causa, mox videro; interea hoc tenebo,
+              si mihi.  Et quidem se repellere, idque instituit docere sic omne
+              animal, simul atque.
+            </p>
+          </div>
+
 
 Journal Cards:
 - Create card from api entry -> function which returns the corresponding DOM node
 - Append all nodes in loop over array from API
 
+section."section__journal mobile"
 
 */
