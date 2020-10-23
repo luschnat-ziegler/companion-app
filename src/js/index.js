@@ -190,24 +190,52 @@ function addBuddies(inputArray) {
   });
 };
 
+const dummyTeams = [["Marian", "Tobi", "Arthur"],["Philipp", "Marcel", "Gadget"],["Henna", "Fabian", "Domi"]];
+const teamsParent = document.querySelector('.main__team');
+
+renderTeams(dummyTeams);
+
+function renderTeams(responseArray){
+  teamsParent.innerHTML = '';
+  responseArray.forEach((team,i) => addTeam(team,i));
+}
+
+function addTeam(inputArray,index) {
+  const teamsHeader = document.createElement('h2');
+  teamsHeader.classList.add('section-title');
+  teamsParent.appendChild(teamsHeader);
+  teamsHeader.innerText = "Team " + (index+1);
+  
+  const teamUl = document.createElement('ul');
+  teamUl.classList.add('list__team');
+  teamsParent.appendChild(teamUl);
+  
+  inputArray.forEach(member => {
+    const teamLi = document.createElement('li');
+    teamLi.classList.add('name');
+    teamUl.appendChild(teamLi);
+    teamLi.innerText = member;
+  })
+}
+
+
+
+
+
 /*
 
-Buddies:
-- Create ul.list__buddy for a buddy pair -> function which returns a DOM node
-- Append all nodes in loop over array from API
-
-+++
-
-Parent: main.main__buddy
-
-<ul class="list__buddy">
-  <li class="name">Sudanka Bakalowits</li>
-  <li class="name">Yasaman Foroutan</li>
-</ul> 
-
-+++
 
 Teams:
+<h2 class="section-title">Team 1</h2>
+          <ul class="list__team">
+            <li class="name">Sudanka Bakalowits</li>
+            <li class="name">Yasaman Foroutan</li>
+            <li class="name">Chioke Okonkwo</li>
+            <li class="name">Maria José Botín</li>
+            <li class="name">Tikhon Yaroslavsky</li>
+          </ul>
+
+          main.main__team
 - 
 
 Journal Cards:
