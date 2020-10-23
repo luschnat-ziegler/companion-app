@@ -166,3 +166,53 @@ journalForm.addEventListener('submit', (event) => {
   comprehensionImgs.forEach(rect => rect.src = hiddenOutlineRectangleSource);
 
 });
+
+const dummyResponse = [["Marian", "Tobi"],["Philipp", "Marcel"],["Henna", "Fabian"]];
+const buddiesParent = document.querySelector('.main__buddy');
+
+renderBuddies(dummyResponse);
+
+function renderBuddies(responseArray) {
+  buddiesParent.innerHTML = '';
+  responseArray.forEach(buddyPair => addBuddies(buddyPair));
+}
+
+function addBuddies(inputArray) {
+  const buddyUl = document.createElement('ul');
+  buddyUl.classList.add('list__buddy');
+  buddiesParent.appendChild(buddyUl);
+
+  inputArray.forEach(buddy => {
+    const buddyLi = document.createElement('li');
+    buddyLi.classList.add('name');
+    buddyUl.appendChild(buddyLi);
+    buddyLi.innerText = buddy;
+  });
+};
+
+/*
+
+Buddies:
+- Create ul.list__buddy for a buddy pair -> function which returns a DOM node
+- Append all nodes in loop over array from API
+
++++
+
+Parent: main.main__buddy
+
+<ul class="list__buddy">
+  <li class="name">Sudanka Bakalowits</li>
+  <li class="name">Yasaman Foroutan</li>
+</ul> 
+
++++
+
+Teams:
+- 
+
+Journal Cards:
+- Create card from api entry -> function which returns the corresponding DOM node
+- Append all nodes in loop over array from API
+
+
+*/
