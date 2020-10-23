@@ -139,27 +139,29 @@ ratingStars.forEach((img, index) => {
 const journalForm = document.querySelector('form');
 
 journalForm.addEventListener('submit', (event) => {
+
+  // Prevent default behaviour
   event.preventDefault();
 
+  // Get list from localStorage
   const list = localStorage.getItem('history') 
     ? JSON.parse(localStorage.getItem('history'))
     : [];
   
-  const activeStars = document.querySelectorAll(`.rating__display--create > img[src='${hiddenStarSource}']`);
-  const activeRects = document.querySelectorAll(`.comprehension__display-create > img[src='${hiddenRectangleSource}']`);
-  
-  const rating = activeStars.length;
-  const comprehension = activeRects.length;
+  // Construct new entry
+  const rating = document.querySelectorAll(`.rating__display--create > img[src='${hiddenStarSource}']`).length;
+  const comprehension = document.querySelectorAll(`.comprehension__display-create > img[src='${hiddenRectangleSource}']`).length;
   const motto = journalForm.motto.value;
   const notes = journalForm.notes.value;
 
   const newEntry = { rating:rating, comprehension:comprehension, motto:motto, notes:notes };
 
+  // Write to localStorage
   localStorage.setItem('history', JSON.stringify([...list, newEntry]));
 
+  //Reset Form
   journalForm.motto.value = '';
   journalForm.notes.value = '';
-
   ratingStars.forEach(star => star.src = hiddenOutlineStarSource);
   comprehensionImgs.forEach(rect => rect.src = hiddenOutlineRectangleSource);
 
