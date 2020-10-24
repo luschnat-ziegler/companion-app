@@ -1,6 +1,6 @@
 // Set user
 
-const userName = "Marian";
+const userName = "Gadget";
 
 // ROOT INDEX
 const rootPage = document.querySelector("#indexPage");
@@ -183,49 +183,24 @@ journalForm.addEventListener('submit', (event) => {
 
 });
 
-// API Buddies
+// Get API data
 
-function getBuddies() {
-    fetch('https://muc-2020-w1-student-api.vercel.app/api/buddies')
-    .then(result => result.json())
-    .then(data => {
-      renderBuddies(data);
-      indexBuddies(data);
-    })
-    .catch(error => console.error(error));
-};
+const buddyPromise = fetch('https://muc-2020-w1-student-api.vercel.app/api/buddies').then(result => result.json());
+const teamPromise = fetch('https://muc-2020-w1-student-api.vercel.app/api/teams').then(result => result.json());
+const journalPromise = fetch('https://muc-2020-w1-student-api.vercel.app/api/journals').then(result => result.json());
 
-getBuddies();
-
-// API Teams
-
-function getTeams() {
-  fetch('https://muc-2020-w1-student-api.vercel.app/api/teams')
-  .then(result => result.json())
+Promise.all([buddyPromise, teamPromise, journalPromise])
   .then(data => {
-    renderTeams(data);
-    indexTeam(data);
+    renderBuddies(data[0]);
+    indexBuddies(data[0]);
+    renderTeams(data[1]);
+    indexTeam(data[1]);
+    renderJournal(data[2]);
+    indexCard(data[2][0]);
   })
   .catch(error => console.error(error));
-};
 
-getTeams();
-
-// API Journal
-
-function getJournal() {
-  fetch('https://muc-2020-w1-student-api.vercel.app/api/journals')
-  .then(result => result.json())
-  .then(data => {
-    renderJournal(data);
-    indexCard(data[0]);
-  })
-  .catch(error => console.error(error));
-};
-
-getJournal();
-
-// Buddy rendering
+// Buddies rendering
 
 const buddiesParent = document.querySelector('.main__buddy');
 
