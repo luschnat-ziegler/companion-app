@@ -1,3 +1,5 @@
+// ALL HIDDEN DOM ELEMENTS DWELL HERE
+
 const hiddenStar = document.querySelector('#hidden-star');
 export const hiddenStarSource = hiddenStar.attributes.src.nodeValue;
 

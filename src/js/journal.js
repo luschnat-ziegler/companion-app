@@ -1,11 +1,19 @@
+// IMPORTS
+
 import {hiddenStarSource, hiddenStar8Source, hiddenRectangle3Source, hiddenRectangle13Source} from './hiddenfiles';
 
+// DEFINE MAIN CONTAINER ELEMENT
+
 const journalParent = document.querySelector('.cardparent');
+
+// MAIN RENDER FUNCTION TO EXPORT
 
 export default function renderJournal(responseArray){
   journalParent.innerHTML = '';
   responseArray.forEach((card) => addJournalCard(card));
 }
+
+// FUNCTION TO RENDER SINGLE JOURNAL CARD
 
 function addJournalCard(inputObject) {
   

@@ -1,8 +1,18 @@
 
+// IMPORTS
+
 import {hiddenStarSource, hiddenStar8Source, hiddenRectangle3Source, hiddenRectangle13Source} from './hiddenfiles';
 
+// DEFINE MAIN CONTAINER ELEMENT
+
 const indexParent = document.querySelector('.main__index');
+
+// USERNAME CAN BE CHANGED TO RENDER CONTENT ACCORDINGLY
+
 export const userName = "Tobias";
+
+// FUNCTION TO RENDER USER'S BUDDY PAIR ON DASHBOARD
+
 export default function indexBuddies (inputArray) {
 
   const indexBuddyHeader = document.createElement('h2')
@@ -24,6 +34,8 @@ export default function indexBuddies (inputArray) {
   });
 };
 
+// FUNCTION TO RENDER USER'S TEAM ON DASHBOARD
+
 export function indexTeam (inputArray) {
   const indexTeamHeader = document.createElement('h2')
   indexTeamHeader.classList.add('section-title', 'h2__index');
@@ -43,6 +55,8 @@ export function indexTeam (inputArray) {
     teamLi.innerText = member;
   });
 };
+
+// FUNCTION TO RENDER JOURNAL CARD ON DASHBOARD
 
 export function indexCard (inputObject) {
 

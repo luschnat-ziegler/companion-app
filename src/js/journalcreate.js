@@ -57,11 +57,14 @@ const journalForm = document.querySelector('form');
     event.preventDefault();
   
     // Get list from localStorage
+    /*
     const list = localStorage.getItem('history') 
       ? JSON.parse(localStorage.getItem('history'))
       : [];
+    */
     
     // Construct new entry
+
     const rating = document.querySelectorAll(`.rating__display--create > img[src='${hiddenStarSource}']`).length;
     const comprehension = document.querySelectorAll(`.comprehension__display-create > img[src='${hiddenRectangleSource}']`).length;
     const motto = journalForm.motto.value;
@@ -73,6 +76,7 @@ const journalForm = document.querySelector('form');
     // localStorage.setItem('history', JSON.stringify([...list, newEntry]));
   
     //Reset Form
+    
     journalForm.motto.value = '';
     journalForm.notes.value = '';
     ratingStars.forEach(star => star.src = hiddenOutlineStarSource);

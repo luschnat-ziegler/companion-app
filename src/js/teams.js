@@ -1,9 +1,15 @@
+// DEFINE MAIN CONTAINER ELEMENT
+
 const teamsParent = document.querySelector('.main__team');
+
+// FUNCTION TO RENDER TEAMS ON TEAM SITE
 
 export default function renderTeams(responseArray){
   teamsParent.innerHTML = '';
   responseArray.forEach((team,i) => addTeam(team,i));
 };
+
+// FUNCTION TO ADD A SINGULAR TEAM
 
 function addTeam(inputArray,index) {
   const teamsHeader = document.createElement('h2');

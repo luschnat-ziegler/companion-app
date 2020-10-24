@@ -1,9 +1,15 @@
+// DEFINE MAIN CONTAINER ELEMENT
+
 const buddiesParent = document.querySelector('.main__buddy');
+
+// MAIN FUNCTION FOR RENDERING ALL BUDDY PAIRS
 
 export default function renderBuddies(responseArray) {
   buddiesParent.innerHTML = '';
   responseArray.forEach(buddyPair => addBuddies(buddyPair));
 }
+
+// FUNCTION TO RENDER ONE BUDDY PAIR
 
 function addBuddies(inputArray) {
   const buddyUl = document.createElement('ul');
