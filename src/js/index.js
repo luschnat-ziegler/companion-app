@@ -4,20 +4,24 @@ const rootPage = document.querySelector("#indexPage");
 // HIDDEN ELEMENTS
 const hiddenStar = document.querySelector('#hidden-star');
 const hiddenStarSource = hiddenStar.attributes.src.nodeValue;
+
 const hiddenOutlineStar = document.querySelector('#hidden-outlinestar');
 const hiddenOutlineStarSource = hiddenOutlineStar.attributes.src.nodeValue;
+
 const hiddenRectangle = document.querySelector('#hidden-rectangle');
 const hiddenRectangleSource = hiddenRectangle.attributes.src.nodeValue;
+
 const hiddenOutlineRectangle = document.querySelector('#hidden-outlinerectangle');
 const hiddenOutlineRectangleSource = hiddenOutlineRectangle.attributes.src.nodeValue;
 
 const hiddenStar8 = document.querySelector("#copy8")
 const hiddenStar8Source = hiddenStar8.attributes.src.nodeValue;
+
 const hiddenRectangle3 = document.querySelector("#copy3");
 const hiddenRectangle3Source = hiddenRectangle3.attributes.src.nodeValue;
+
 const hiddenRectangle13 = document.querySelector("#copy13");
 const hiddenRectangle13Source = hiddenRectangle13.attributes.src.nodeValue;
-
 
 // Link Config
 const DASHBOARD_PAGE = "navDash";
@@ -260,7 +264,6 @@ function addTeam(inputArray,index) {
 // Journal rendering
 
 const journalParent = document.querySelector('.cardparent');
-const dummyObject = {id:"7",rating:4,comprehension:5,motto:"motto",notes:"notes"};
 
 function renderJournal(responseArray){
   journalParent.innerHTML = '';
