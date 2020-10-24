@@ -2,7 +2,7 @@
 import {hiddenStarSource, hiddenStar8Source, hiddenRectangle3Source, hiddenRectangle13Source} from './hiddenfiles';
 
 const indexParent = document.querySelector('.main__index');
-export const userName = "Marian";
+export const userName = "Tobias";
 export default function indexBuddies (inputArray) {
 
   const indexBuddyHeader = document.createElement('h2')
