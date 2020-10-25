@@ -1,10 +1,21 @@
 // IMPORTS
 
 import {hiddenStarSource, hiddenStar8Source, hiddenRectangle3Source, hiddenRectangle13Source} from './hiddenfiles';
+import navHandler, {clearContent} from './nav';
 
 // DEFINE MAIN CONTAINER ELEMENT
 
 const journalParent = document.querySelector('.cardparent');
+const journalEntryButton = document.querySelector("#journalEntryButton");
+
+
+// JOURNAL ENTRY BUTTON EVENT LISTENER
+
+journalEntryButton.addEventListener("click", (event) => {
+  const clickedID = event.target.attributes.id.value;
+      clearContent();
+      return navHandler(clickedID);
+  });
 
 // MAIN RENDER FUNCTION TO EXPORT
 

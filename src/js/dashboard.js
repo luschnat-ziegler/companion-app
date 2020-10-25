@@ -9,7 +9,7 @@ const indexParent = document.querySelector('.main__index');
 
 // USERNAME CAN BE CHANGED TO RENDER CONTENT ACCORDINGLY
 
-export const userName = "Tobias";
+export const userName = "Marian";
 
 // FUNCTION TO RENDER USER'S BUDDY PAIR ON DASHBOARD
 

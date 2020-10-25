@@ -10,12 +10,6 @@ const comprehensionImgs = document.querySelectorAll('.comprehension__display-cre
 const ratingStars = document.querySelectorAll('.rating__display--create > img');
 
 // EVENT LISTENERS
-
-journalEntryButton.addEventListener("click", (event) => {
-const clickedID = event.target.attributes.id.value;
-    clearContent();
-    return navHandler(clickedID);
-});
   
 journalSaveButton.addEventListener('click', () => {
     clearContent();
@@ -74,7 +68,10 @@ const journalForm = document.querySelector('form');
   
     // Write to localStorage
     // localStorage.setItem('history', JSON.stringify([...list, newEntry]));
-  
+    
+    // OR SEND TO API
+
+
     //Reset Form
     
     journalForm.motto.value = '';
