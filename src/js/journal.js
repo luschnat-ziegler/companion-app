@@ -8,7 +8,6 @@ import navHandler, {clearContent} from './nav';
 const journalParent = document.querySelector('.cardparent');
 const journalEntryButton = document.querySelector("#journalEntryButton");
 
-
 // JOURNAL ENTRY BUTTON EVENT LISTENER
 
 journalEntryButton.addEventListener("click", (event) => {

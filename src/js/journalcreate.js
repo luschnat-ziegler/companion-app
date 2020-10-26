@@ -3,7 +3,6 @@ import {hiddenOutlineRectangleSource, hiddenRectangleSource, hiddenOutlineStarSo
 
 // DOM ELEMENTS
 
-const journalEntryButton = document.querySelector("#journalEntryButton");
 const journalSaveButton = document.querySelector('.btn-save');
 const journalCancelButton = document.querySelector('.btn-cancel');
 const comprehensionImgs = document.querySelectorAll('.comprehension__display-create > img');
