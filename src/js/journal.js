@@ -30,10 +30,12 @@ function addJournalCard(inputObject) {
   const cardDiv = document.createElement('div');
   cardDiv.classList.add('card');
   journalParent.appendChild(cardDiv);
+
   const cardTitle = document.createElement('h2');
   cardTitle.classList.add('section-title');
   cardTitle.innerText = "DUMMY DATE";
   cardDiv.appendChild(cardTitle);
+  
   const cardLabel = document.createElement('h3');
   cardLabel.classList.add('card-label','mb-1','mt-1');
   cardLabel.innerText = "Rating:";

@@ -9,7 +9,7 @@ const indexParent = document.querySelector('.main__index');
 
 // USERNAME CAN BE CHANGED TO RENDER CONTENT ACCORDINGLY
 
-export const userName = "Marian";
+export const userName = "Marcel";
 
 // FUNCTION TO RENDER USER'S BUDDY PAIR ON DASHBOARD
 
@@ -37,9 +37,9 @@ export default function indexBuddies (inputArray) {
 // FUNCTION TO RENDER USER'S TEAM ON DASHBOARD
 
 export function indexTeam (inputArray) {
-  const indexTeamHeader = document.createElement('h2')
+  const indexTeamHeader = document.createElement('h2');
   indexTeamHeader.classList.add('section-title', 'h2__index');
-  indexTeamHeader.innerText = "Your current Team:"
+  indexTeamHeader.innerText = 'Your current Team:';
   indexParent.appendChild(indexTeamHeader);
 
   const userTeam = inputArray.find(team => team.includes(userName));
@@ -58,7 +58,7 @@ export function indexTeam (inputArray) {
 
 // FUNCTION TO RENDER JOURNAL CARD ON DASHBOARD
 
-export function indexCard (inputObject) {
+export function indexCard(inputObject) {
 
   const indexJournalSection = document.createElement('section');
   indexJournalSection.classList.add('section-journal','mobile');

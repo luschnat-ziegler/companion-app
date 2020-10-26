@@ -11,11 +11,11 @@ export default function renderTeams(responseArray){
 
 // FUNCTION TO ADD A SINGULAR TEAM
 
-function addTeam(inputArray,index) {
+function addTeam(inputArray, index) {
   const teamsHeader = document.createElement('h2');
   teamsHeader.classList.add('section-title');
   teamsParent.appendChild(teamsHeader);
-  teamsHeader.innerText = "Team " + (index+1);
+  teamsHeader.innerText = `Team ${ index+1 }`;
   
   const teamUl = document.createElement('ul');
   teamUl.classList.add('list__team');
