@@ -4,7 +4,7 @@ const buddiesParent = document.querySelector('.main__buddy');
 
 // INSERT CURRENT DATE IN HEADER
 
-const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const dateToday = new Date();
 const dateString = `on ${weekDays[dateToday.getDay()]} - ${dateToday.getDate()}.${dateToday.getMonth()+1}.${dateToday.getFullYear()}`;
 

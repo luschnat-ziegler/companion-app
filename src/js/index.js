@@ -9,9 +9,12 @@ import "./journalcreate";
 
 // Build app from API:
 
-const buddyPromise = fetch('https://muc-2020-w1-student-api.vercel.app/api/buddies').then(result => result.json());
-const teamPromise = fetch('https://muc-2020-w1-student-api.vercel.app/api/teams').then(result => result.json());
-const journalPromise = fetch('https://muc-2020-w1-student-api.vercel.app/api/journals').then(result => result.json());
+const buddyPromise = fetch('https://muc-2020-w1-student-api.vercel.app/api/buddies')
+  .then(result => result.json());
+const teamPromise = fetch('https://muc-2020-w1-student-api.vercel.app/api/teams')
+  .then(result => result.json());
+const journalPromise = fetch('https://muc-2020-w1-student-api.vercel.app/api/journals')
+  .then(result => result.json());
 
 Promise.all([buddyPromise, teamPromise, journalPromise])
   .then(data => {
